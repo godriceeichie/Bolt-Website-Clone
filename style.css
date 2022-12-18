@@ -244,8 +244,10 @@ main{
 .first-hero-container .download-link-container{
     padding-left: 10px;
     display: flex;
-    align-items: flex-start;
-    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* flex-wrap: wrap; */
     justify-content: center;
     /* background-color: blue; */
     width: 60%;
@@ -273,14 +275,30 @@ main{
 }
 
 #driver-signup-section{
+    width: 100%;
     height: 20vh;
     background-color: #6675ff;
     color: white;
     text-align: center;
+    padding: 1rem 0rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.driver-signup-container{
+    width: 90%;
+    max-width: 400px;
+    margin-inline: auto;
     display: flex;
     flex-direction: column;
+    padding: 1rem;
     gap: 1rem;
-    padding: 1rem 1.5rem;
+    /* background-color: red; */
+}
+
+.driver-signup-container>div{
+    width: 100%;
 }
 
 #driver-signup-section h3{
@@ -298,10 +316,15 @@ main{
     display: inline-block;
     color: black;
     background-color: white;
-    border-radius: 1rem;
+    border-radius: 2rem;
+    width: 70%;
+    font-size: 0.875rem;
+    padding: 0.857em 1.714em;
+    font-weight: 500;
 }
 
-@media screen and (min-width: 375px){
+/* For chrome dev tools 375px phones */
+@media screen and (min-width: 375px) and (min-height: 1126px){
     #hero-section{
         height: 60vh;
     }
@@ -310,40 +333,53 @@ main{
         padding-top: 1.25em;
         padding-bottom: 0em;
     }
-}
 
+    #driver-signup-section{
+        height: 15vh;
+    }
+    .first-hero-container .download-link-container{
+        flex-direction: row;
+        width: 100%;
+    }
+}
 /* for iPhone SE */
-@media screen and (min-width: 360px) and (min-height: 667px){
+@media screen and (min-width: 360px) and (max-height: 844px){
     #hero-section{
         height: 90vh;
     }
 
     .first-hero-container .download-link-container{
-        align-items: center;
-        flex-wrap: nowrap;
-        justify-content: center;
-        /* background-color: blue; */
+        flex-direction: row;
         width: 100%;
+    }
+
+    #driver-signup-section{
+        height: 25vh;
     }
 }
 
 /* For iPhone XR */
-@media screen and (min-width: 414px) and (min-width: 896px){
+@media screen and (min-width: 414px) and (max-height: 896px){
     #hero-section{
-        height: 20vh;
+        height: 70vh;
+    }
+
+    .first-hero-container .download-link-container{
+        flex-direction: row;
+        width: 100%;
     }
 }
 
 @media screen and (min-width: 768px){
     #hero-section{
-        height: 75vh;
+        height: 80vh;
         /* max-height: 110vh; */
     }
 
     .first-hero-container{
         padding-block: 0em;
         padding-top: 8em;
-        padding-bottom: 0em;
+        padding-bottom: 1em;
     }
 
     .first-hero-section{
@@ -360,17 +396,22 @@ main{
     }
 
     .first-hero-container .download-link-container{
-        padding-left: 0px;
-        align-items: center;
         justify-content: unset;
-        flex-wrap: nowrap;
     }
 
     .first-hero-container>a{
         justify-content: unset;
-        margin-top: 5.5em;
+        margin-top: 4em;
     }
-    
+
+    .driver-signup-container{
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 90%;
+        max-width: 700px;
+    }
+
 }
 
 @media screen and (min-width: 1024px) {
