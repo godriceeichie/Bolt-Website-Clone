@@ -404,6 +404,14 @@ main{
         margin-top: 4em;
     }
 
+    #driver-signup-section{
+        text-align: left;
+    }
+
+    #driver-signup-section a{
+        text-align: center;
+    }
+
     .driver-signup-container{
         flex-direction: row;
         justify-content: space-between;
