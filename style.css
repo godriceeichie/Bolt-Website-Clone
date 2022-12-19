@@ -248,9 +248,6 @@ main{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* flex-wrap: wrap; */
-    justify-content: center;
-    /* background-color: blue; */
     width: 60%;
     margin-bottom: 2rem;
 }
@@ -327,8 +324,9 @@ main{
 }
 
 #product-benefits-section{
-    height: 40vh;
+    height: 45vh;
     width: 100%;
+    padding-block: 3rem;
 }
 
 .product-benefits-container{
@@ -340,7 +338,6 @@ main{
     flex-direction: column;
     flex-grow: 1;
     justify-content: space-between;
-    padding-block: 1.5rem;
     /* background-color: red; */
 }
 
@@ -409,6 +406,18 @@ main{
         height: 30vh;
     }
 
+    #product-benefits-section{
+        height: 60vh;
+        width: 100%;
+        padding-block: 3rem;
+    }
+    
+
+    .product-benefits-container{
+        gap: 1rem;
+        /* background-color: red; */
+    }
+
 }
 
 /* For iPhone XR */
@@ -423,9 +432,31 @@ main{
     }
 }
 
-@media screen and (min-width: 768px){
+@media screen and (min-width: 600px) {
+
+    .first-hero-section{
+        height: 55%;
+    }
+
+    .second-hero-section{
+        height: 50%;
+    }
+
+    .product-benefits-container>div{
+        /* display: flex;
+        align-items: center; */
+        display: grid;
+        gap: .3rem;
+        grid-auto-flow: column;
+        grid-auto-columns: .3fr 1fr;
+    }
+
+}
+
+/* Tablet view */
+@media screen and (min-width: 650px){
     #hero-section{
-        height: 80vh;
+        height: 100vh;
         /* max-height: 110vh; */
     }
 
@@ -448,10 +479,6 @@ main{
         margin-bottom: 1rem;
     }
 
-    .first-hero-container .download-link-container{
-        justify-content: unset;
-    }
-
     .first-hero-container>a{
         justify-content: unset;
         margin-top: 4em;
@@ -471,6 +498,16 @@ main{
         align-items: center;
         width: 90%;
         max-width: 700px;
+    }
+    
+    .first-hero-container .download-link-container{
+        flex-direction: row;
+        justify-content: unset;
+        width: 100%;
+    }
+
+    #product-benefits-section{
+        padding-block: 3rem;
     }
 
     .product-benefits-container{
@@ -497,16 +534,14 @@ main{
     .price-benefit>img, .accessibility-benefit>img{
         width: 140px;
         height: 140px;
+        margin-bottom: 1.2rem;
     }
+
+    
 
     .price-benefit, .accessibility-benefit{
-        padding-inline-end: 1rem;
-    }
-
-    .accessibility-benefit{
         padding-inline-end: 1.5rem;
     }
-
 }
 
 /* For when the window is shifted for inspection */
@@ -566,6 +601,10 @@ main{
         font-size: 4.5em;
         line-height: 72px;
     }
+
+    .product-benefits-container>div h4{
+        font-size: 2.125rem;
+    }
 }
 
 @media screen and (min-width: 1280px){
@@ -581,5 +620,13 @@ main{
     .first-hero-container h1{
         width: 100%;
         font-weight: 600;
+    }
+
+    #product-benefits-section{
+        height: 60vh;
+    }
+
+    .price-benefit{
+        padding-inline-end: 5rem;
     }
 }
