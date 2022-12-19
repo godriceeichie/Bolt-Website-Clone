@@ -536,10 +536,34 @@ nav .navbar-list .flex-hide, nav .navbar-list .hide, .hide, .flex-hide{
     display: flex;
     /* justify-content: center; */
     align-items: center;
+    text-align: center;
     padding: .8em;
-    margin-bottom: 1rem;
+    margin-top: 1rem;
 }
 
+.language-btn{
+    padding-block: .8rem;
+    display: flex;
+    align-items: center;
+}
+
+.footer-list-heading .list-heading{
+    font-size: 1.25rem;
+    line-height: 1.5em;
+    font-weight: 600;
+    margin-top: 2rem;
+}
+
+.footer-list-item .footer-list-link{
+    color: #243134;
+    font-weight: 400;
+    margin-top: 1rem;
+    display: inline-block;
+}
+
+.footer-list-item .footer-list-link:hover{
+    color: #27b973
+}
 /* For chrome dev tools 375px phones */
 @media screen and (min-width: 375px) and (min-height: 1126px){
     #hero-section{
