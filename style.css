@@ -18,6 +18,11 @@ body{
     font-size: 1rem;
 }
 
+h1, h2, h3, h4{
+    font-weight: 600;
+    color: #243134;
+}
+
 img{
     max-width: 100%;
     display: inline-block;
@@ -232,6 +237,7 @@ main{
     /* max-width: 100%; */
     line-height: 56px;
     margin-bottom: 1em;
+    color: white;
 }
 
 .first-hero-container .download-bolt-text{
@@ -303,7 +309,7 @@ main{
     font-size: 1.5rem;
     line-height: 1.33em;
     font-weight: 600;
-    /* white-space: nowrap; */
+    color: white;
 }
 
 #driver-signup-section p{
@@ -329,7 +335,7 @@ main{
     padding-block: 3rem;
 }
 
-.product-benefits-container{
+.product-benefits-container, .benefits-container{
     width: 87%;
     height: 100%;
     max-width: 1250px;
@@ -347,8 +353,6 @@ main{
 }
 
 .product-benefits-container>div{
-    /* display: flex;
-    align-items: center; */
     display: grid;
     gap: .3rem;
     grid-auto-flow: column;
@@ -429,6 +433,54 @@ main{
     margin-top: 1rem;
     line-height: 1.5em;
 }
+
+.benefits-container{
+    padding-block: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.benefits-container>div{
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.benefits-container .svg-container{
+    display: block;
+    width: 48px;
+    height: 48px;
+    background-color: #d9fde5;
+    padding: .75rem;
+    border-radius: 50%;
+}
+
+.benefits-container svg{
+    color: #32bb78;
+}
+
+.benefits-container>div h4{
+    font-size: 1.5rem;
+    line-height: 1.33em;
+    font-weight: 600;
+}
+
+.benefits-container>div p{
+    color: #818391;
+    margin-top: .5rem;
+}
+
+.benefits-container a{
+    color: #249e64;
+}
+
+.benefits-container a span{
+    font-size: .8125rem;
+    color: #249e64;
+}
+
+
 /* For chrome dev tools 375px phones */
 @media screen and (min-width: 375px) and (min-height: 1126px){
     #hero-section{
@@ -589,31 +641,48 @@ main{
         grid-template-columns: repeat(3, 1fr);
     }
 
-    .product-benefits-container img{
-        height: 80px;
-        width: 80px;
-    }
-
     .product-benefits-container>div{
         display: flex;
         flex-direction: column;
+        align-items: unset;
         /* justify-content: baseline; */
     }
 
-    .ride-benefit>img{
+    .ride-benefit img{
         width: 162px;
         height: 162px;
     }
 
-    .price-benefit>img, .accessibility-benefit>img{
+    .price-benefit img, .accessibility-benefit img{
         width: 140px;
         height: 140px;
         margin-bottom: 1.2rem;
     }
 
     .price-benefit, .accessibility-benefit{
-        padding-inline-end: 1.5rem;
+        padding-inline-end: 2rem;
     }
+
+    .benefits-container{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        margin-top: 152px;
+        margin-bottom: 10rem;
+    }
+    
+    .benefits-container>div{
+        display: flex;
+        flex-direction: column;
+        align-items: unset;
+        gap: 1rem;
+    }
+
+    .benefits-container>div p{
+        color: #818391;
+        margin-top: .8rem;
+    }
+    
+    
 }
 
 /* For when the window is shifted for inspection */
@@ -719,7 +788,11 @@ main{
     .process-content p{
         font-size: 1.125rem;
         width: 50%;
-    }    
+    }
+    
+    .benefits-container>div p{
+        font-size: 1.125rem;
+    }
 }
 
 @media screen and (min-width: 1280px){
