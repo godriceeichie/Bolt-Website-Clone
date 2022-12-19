@@ -514,7 +514,31 @@ nav .navbar-list .flex-hide, nav .navbar-list .hide, .hide, .flex-hide{
     text-decoration: underline;
 }
 
+.footer-container{
+    width: 87%;
+    height: 100%;
+    max-width: 1000px;
+    margin-inline: auto;
+    padding-block: 2rem;
+}
 
+.footer-container .logo-container{
+    margin-bottom: 1.5rem;
+}
+
+.footer-link-btn{
+    width: 40%;
+    display: inline;
+    background-color: rgb(244,244,246);
+    border-radius: 1.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    padding: .8em;
+    margin-bottom: 1rem;
+}
 
 /* For chrome dev tools 375px phones */
 @media screen and (min-width: 375px) and (min-height: 1126px){
