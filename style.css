@@ -597,20 +597,36 @@ nav .navbar-list .flex-hide, nav .navbar-list .hide, .hide, .flex-hide{
     margin-bottom: 1em;
 }
 
+.footer-main-links{
+    margin-top: 1rem;
+}
+
 .nav-links{
     display: none;
+    margin-top: 1rem;
 }
 
 .social-links{
-    width: 50%;
+    width: 60%;
     margin-inline: auto;
     display: flex;
-    justify-content: space-between;
-    background-color: red;
+    flex-wrap: wrap;
+    gap: .5rem;
+    /* background-color: red; */
 }
 
 .social-links>a{
     background-color: rgb(244,244,246);
+    padding: .5rem;
+    border-radius: 50%;
+}
+
+.social-links i{
+    font-size: 1.25rem;
+}
+
+.tiktok-link{
+    justify-self: flex-start;
 }
 /* For chrome dev tools 375px phones */
 @media screen and (min-width: 375px) and (min-height: 1126px){
@@ -636,6 +652,16 @@ nav .navbar-list .flex-hide, nav .navbar-list .hide, .hide, .flex-hide{
         flex-wrap: nowrap;
         gap: 1rem;
     }
+
+    .social-links{
+        width: 60%;
+        margin-inline: auto;
+        display: flex;
+        flex-wrap: nowrap;
+        gap: .7rem;
+        /* background-color: red; */
+        justify-content: center;
+    }   
 }
 /* for iPhone SE */
 @media screen and (min-width: 360px) and (max-height: 844px){
