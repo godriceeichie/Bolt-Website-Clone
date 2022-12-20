@@ -918,6 +918,10 @@ nav .navbar-list .flex-hide, nav .navbar-list .hide, .hide, .flex-hide{
         border-bottom: none;
     }
 
+    .copyright-section{
+        margin-bottom: 2rem;
+    }
+
 }
 
 /* For when the window is shifted for inspection */
@@ -1032,10 +1036,6 @@ nav .navbar-list .flex-hide, nav .navbar-list .hide, .hide, .flex-hide{
     .footer-grid{
         grid-template-columns: repeat(4, 1fr);
     }
-
-    .footer-container{
-        width: 950px;
-    }
     
     .footer-list-container .logo-container img{
         height: 70px;
@@ -1072,7 +1072,13 @@ nav .navbar-list .flex-hide, nav .navbar-list .hide, .hide, .flex-hide{
         order: 1;
         margin-top: 0;
         margin-inline: unset;
-    }  
+    } 
+
+    .copyright-section{
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+    }
 }
 
 @media screen and (min-width: 1280px){
@@ -1103,4 +1109,7 @@ nav .navbar-list .flex-hide, nav .navbar-list .hide, .hide, .flex-hide{
         width: 100%;
     }
 
+    .footer-container{
+        max-width: 1200px;
+    }
 }
