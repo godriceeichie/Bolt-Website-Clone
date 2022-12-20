@@ -517,7 +517,7 @@ nav .navbar-list .flex-hide, nav .navbar-list .hide, .hide, .flex-hide{
 .footer-container{
     width: 87%;
     height: 100%;
-    max-width: 1000px;
+    /* max-width: 1000px; */
     margin-inline: auto;
     padding-block: 2rem;
 }
@@ -562,7 +562,34 @@ nav .navbar-list .flex-hide, nav .navbar-list .hide, .hide, .flex-hide{
 }
 
 .footer-list-item .footer-list-link:hover{
-    color: #27b973
+    color: #27b973;
+}
+
+.app-download-link .download-link-container{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.app-download-link .app-store-link{
+    /* margin-bottom: 8px; */
+}
+
+.app-download-link .play-store-link{
+    width: 170px;
+    height: 60px;
+    margin-left: -10px;
+}
+
+.margin-top{
+    margin-top: 3rem;
+}
+.app-download-link>p, .app-download-link .list-heading{
+    color: #818391;
+    line-height: 1.5rem;
+    font-size: 1rem;
+    font-weight: 400;
+    margin-top: 1em;
+    margin-bottom: 1em;
 }
 /* For chrome dev tools 375px phones */
 @media screen and (min-width: 375px) and (min-height: 1126px){
