@@ -517,9 +517,16 @@ nav .navbar-list .flex-hide, nav .navbar-list .hide, .hide, .flex-hide{
 .footer-container{
     width: 87%;
     height: 100%;
-    /* max-width: 1000px; */
+    max-width: 950px;
     margin-inline: auto;
     padding-block: 2rem;
+}
+
+.footer-grid{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    border-bottom: 1px solid rgb(233,234,238);
+    padding-bottom: 1.5rem;
 }
 
 .footer-container .logo-container{
@@ -527,15 +534,16 @@ nav .navbar-list .flex-hide, nav .navbar-list .hide, .hide, .flex-hide{
 }
 
 .footer-link-btn{
-    width: 40%;
+    width: fit-content;
     display: inline;
     background-color: rgb(244,244,246);
     border-radius: 1.5rem;
     font-size: 1rem;
     font-weight: 500;
     display: flex;
-    /* justify-content: center; */
+    justify-content: center;
     align-items: center;
+    gap: .25rem;
     text-align: center;
     padding: .8em;
     margin-top: 1rem;
@@ -570,9 +578,6 @@ nav .navbar-list .flex-hide, nav .navbar-list .hide, .hide, .flex-hide{
     align-items: center;
     flex-wrap: wrap;
 }
-.app-download-link .app-store-link{
-    /* margin-bottom: 8px; */
-}
 
 .app-download-link .play-store-link{
     width: 170px;
@@ -590,6 +595,22 @@ nav .navbar-list .flex-hide, nav .navbar-list .hide, .hide, .flex-hide{
     font-weight: 400;
     margin-top: 1em;
     margin-bottom: 1em;
+}
+
+.nav-links{
+    display: none;
+}
+
+.social-links{
+    width: 50%;
+    margin-inline: auto;
+    display: flex;
+    justify-content: space-between;
+    background-color: red;
+}
+
+.social-links>a{
+    background-color: rgb(244,244,246);
 }
 /* For chrome dev tools 375px phones */
 @media screen and (min-width: 375px) and (min-height: 1126px){
@@ -611,7 +632,10 @@ nav .navbar-list .flex-hide, nav .navbar-list .hide, .hide, .flex-hide{
         width: 100%;
     }
 
-    
+    .app-download-link .download-link-container{
+        flex-wrap: nowrap;
+        gap: 1rem;
+    }
 }
 /* for iPhone SE */
 @media screen and (min-width: 360px) and (max-height: 844px){
@@ -805,6 +829,14 @@ nav .navbar-list .flex-hide, nav .navbar-list .hide, .hide, .flex-hide{
     .cta-section-container p{
         margin-top: 2em;
     }
+
+    .footer-grid{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .app-download-link{
+        display: none;
+    }
 }
 
 /* For when the window is shifted for inspection */
@@ -914,6 +946,19 @@ nav .navbar-list .flex-hide, nav .navbar-list .hide, .hide, .flex-hide{
     
     .benefits-container>div p{
         font-size: 1.125rem;
+    }
+
+    .footer-grid{
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .footer-container{
+        width: 950px;
+    }
+    
+    .footer-list-container .logo-container img{
+        height: 70px;
+        margin-top: 2rem;
     }
 }
 
