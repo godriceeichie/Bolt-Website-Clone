@@ -649,9 +649,20 @@ nav .navbar-list .flex-hide, nav .navbar-list .hide, .hide, .flex-hide{
     margin-bottom: 1rem;
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
-    /* justify-content: space-between; */
-    /* background-color: red; */
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    color: #818391;
+}
+
+.legal-info{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.legal-info>a{
+    color: #818391;
 }
 /* For chrome dev tools 375px phones */
 @media screen and (min-width: 375px) and (min-height: 1126px){
