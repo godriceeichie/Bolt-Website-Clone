@@ -615,7 +615,7 @@ nav .navbar-list .flex-hide, nav .navbar-list .hide, .hide, .flex-hide{
 }
 
 .social-links{
-    width: 70%;
+    width: 75%;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -640,6 +640,18 @@ nav .navbar-list .flex-hide, nav .navbar-list .hide, .hide, .flex-hide{
 
 .tiktok-link{
     justify-self: flex-start;
+}
+
+.copyright-section{
+    width: 80%;
+    margin-inline: auto;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    /* justify-content: space-between; */
+    /* background-color: red; */
 }
 /* For chrome dev tools 375px phones */
 @media screen and (min-width: 375px) and (min-height: 1126px){
