@@ -1,10 +1,33 @@
-let dropdownContainer = document.querySelectorAll(".dropdown-container");
-dropdownContainer.forEach(dropdown => {
-    let caret = dropdown.querySelector(".navbar-list-link span")
-    let toggleButton = dropdown.querySelector(".navbar-list-link");
-    let dropdownMenu = document.querySelectorAll(".dropdown-menu");
-    toggleButton.addEventListener("click", function(){
-        dropdown.classList.toggle("active")
-        caret.classList.toggle("caret-rotate")
+
+const dropdownToggle = document.querySelectorAll(".navbar-list-link")
+const overlay = document.querySelector('.overlay')
+const caret = document.querySelector(".expand-more")
+
+dropdownToggle.forEach(toggleBtn => {
+    toggleBtn.addEventListener('click', e => {
+        e.preventDefault()
+        toggleBtn.classList.toggle("active")
+        const dropdown = toggleBtn.parentElement;
+        // dropdown.classList.toggle("active")
+        if(dropdown.classList.contains('active')){
+            dropdown.classList.toggle('active')
+        }
+
+        else{
+            const dropdowns = document.querySelectorAll(".dropdown-container")
+            dropdowns.forEach(dropdown => {
+                dropdown.classList.remove('active')
+            })
+            dropdown.classList.add('active')
+            
+        }
+
+        
+        if (document.querySelector('.dropdown-container.active')) {
+            overlay.classList.add('active');
+
+        } else {
+            overlay.classList.remove('active');
+        }
     })
 })

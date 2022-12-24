@@ -6,16 +6,107 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        div{
-            max-width: 500px;
-            min-height: 50px;
-            background-color: red
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
         }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav li {
+            position: relative;
+        }
+
+        nav a {
+            color: #333;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 10px 15px;
+            display: block;
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            z-index: 1;
+            min-width: 150px;
+            display: none;
+        }
+
+        /* .dropdown:hover .dropdown-menu, */
+        .dropdown.open .dropdown-menu {
+            display: block;
+        }
+
+        .dropdown-menu li {
+            background: #f2f2f2;
+            display: block;
+        }
+
+        .dropdown-menu li a {
+            color: #333;
+            font-size: 16px;
+        }
+
     </style>
 </head>
 <body>
-    <div>
+    <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle">About</a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Our Team</a></li>
+              <li><a href="#">Our History</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle">Services</a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Consulting</a></li>
+              <li><a href="#">Training</a></li>
+              <li><a href="#">Support</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+    <script>
+        const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+        // const overlay = document.querySelector('.overlay');
 
-    </div>
+        dropdownToggles.forEach(toggle => {
+        toggle.addEventListener('click', event => {
+            event.preventDefault();
+
+            // Close all dropdown menus
+            const dropdowns = document.querySelectorAll('.dropdown');
+            dropdowns.forEach(dropdown => {
+                dropdown.classList.remove('open');
+            });
+
+            // Toggle the clicked dropdown menu
+            const dropdown = toggle.parentElement;
+            if (dropdown.classList.contains('open')) {
+            // Close the dropdown menu if it is already open
+                dropdown.classList.remove('open');
+                // overlay.classList.remove('open');
+            } else {
+            // Open the dropdown menu if it is closed
+                dropdown.classList.toggle('open');
+                // overlay.classList.add('open');
+            }
+        });
+});
+
+
+    </script>
 </body>
 </html>

@@ -40,6 +40,8 @@ a{
 header{
     height: 60px;
     /* background-color: blue; */
+    position: sticky;
+    z-index: 50;
 }
 
 .user-status-container{
@@ -111,12 +113,12 @@ nav .hover-link>a:hover, nav .navbar-list-item>.active-link{
     border-radius: 10px;
 }
 
-.navbar-list-link .material-symbols-outlined{
+.navbar-list-link > .expand-more{
     color: rgb(169,171,185);
-    transition: transform 150ms;
+    transition: transform 400ms;
 }
 
-.caret-rotate{
+.navbar-list-link.active > .expand-more{
     transform: rotate(180deg);
 }
 
@@ -161,12 +163,15 @@ nav .navbar-list .flex-hide, nav .navbar-list .hide, .hide, .flex-hide{
     pointer-events: none;
     transform: translateY(-10px);
     transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
+    /* display: none; */
+    z-index: 50;
 }
 
-.dropdown-container.active>.navbar-list-link+ .dropdown-menu{
+.dropdown-container.active .dropdown-menu{
     transform: translateY(0);
     opacity: 1;
     pointer-events: auto;
+    /* display: block; */
 }
 
 .dropdown-menu .dropdown{
@@ -198,6 +203,24 @@ nav .navbar-list .flex-hide, nav .navbar-list .hide, .hide, .flex-hide{
     line-height: 20px;
     font-weight: 400;
 
+}
+
+.overlay{
+    /* visibility: hidden; */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .5);
+    visibility: hidden;
+    z-index: 40;
+    transition: all 200ms;
+}
+
+.overlay.active{
+    visibility: visible;
+    /* opacity: .5; */
 }
 
 #hero-section{

@@ -12,7 +12,8 @@
     <script src="https://kit.fontawesome.com/ca4da51059.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <header>
+    <div class="wrapper">
+      <header>
         <div class="user-status-container hide">
           <div class="user-status">
             <div class="user-language">
@@ -44,10 +45,10 @@
                 <img src="img/bolt-logo.svg" alt="">
               </a>
             </li>
-            <li class="flex-hide hover-link dropdown-container navbar-list-item" data-dropdown="">
-              <a href="#" class="navbar-list-link">
+            <li class="flex-hide hover-link dropdown-container navbar-list-item" data-dropdown>
+              <a href="#" class="navbar-list-link" data-dropdown-button>
                 Products
-                <span class="material-symbols-outlined">
+                <span class="material-symbols-outlined expand-more">
                   keyboard_arrow_down
                 </span>
               </a>
@@ -92,10 +93,10 @@
                 </ul>
               </div>
             </li>
-            <li class="flex-hide hover-link navbar-list-item dropdown-container" data-dropdown="">
-              <a href="#" class="navbar-list-link">
+            <li class="flex-hide hover-link navbar-list-item dropdown-container" data-dropdown>
+              <a href="#" class="navbar-list-link" data-dropdown-button>
                 Partner with Bolt
-                <span class="material-symbols-outlined">
+                <span class="material-symbols-outlined expand-more">
                   keyboard_arrow_down
                 </span>
               </a>
@@ -134,10 +135,10 @@
                 </ul>
               </div>  
             </li>
-            <li class="flex-hide navbar-list-item hover-link dropdown-container" data-dropdown="">
-              <a href="#" class="navbar-list-link">
+            <li class="flex-hide navbar-list-item hover-link dropdown-container" data-dropdown>
+              <a href="#" class="navbar-list-link" data-dropdown-button>
                 Company
-                <span class="material-symbols-outlined">
+                <span class="material-symbols-outlined expand-more">
                   keyboard_arrow_down
                 </span>
               </a>
@@ -176,10 +177,10 @@
                 Support
               </a>
             </li>
-            <li class="flex-hide hover-link navbar-list-item dropdown-container" data-dropdown="">
-              <a href="#" class="navbar-list-link">
+            <li class="flex-hide hover-link navbar-list-item dropdown-container" data-dropdown>
+              <a href="#" class="navbar-list-link" data-dropdown-button>
                 Cities
-                <span class="material-symbols-outlined">
+                <span class="material-symbols-outlined expand-more">
                   keyboard_arrow_down
                 </span>
               </a>
@@ -206,6 +207,8 @@
           </ul>
         </nav>
     </header>
+    <div class="overlay">
+    </div>
     <main>
       <section id="hero-section">
         <div class="first-hero-section">
@@ -533,6 +536,7 @@
         </div>
       </div>
     </footer>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
