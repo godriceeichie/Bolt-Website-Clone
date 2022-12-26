@@ -87,7 +87,7 @@ header{
 nav{
     height: 100%;
     background-color: white;
-    padding-block: 1rem;
+    padding-block: .75rem;
 }
 
 nav .navbar-list{
@@ -102,6 +102,7 @@ nav .navbar-list{
 nav .navbar-list .navbar-list-item{
     display: flex;
     align-items: center;
+    height: 100%;
 }
 
 nav .navbar-list .navbar-list-item a{
@@ -128,20 +129,50 @@ nav .navbar-list-link{
     align-items: center;
 }
 
-.menu-icon{
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    /* padding: 12px; */
-    background-color: #f4f4f6;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+nav .navbar-list-link .logo-container>img{
+    height: 35px;
+    /* margin-top: 100px; */
 }
 
-.menu-icon .material-symbols-outlined{
-    font-size: 2rem;
-    color: grey;
+.hamburger{
+    cursor: pointer;
+    width: 42px;
+    height: 42px;
+    background-color: rgb(244,244,246);
+    border-radius: 50%;
+    appearance: none;
+    outline: none;
+    border: none;
+    margin-right: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* padding-inline: .75rem; */
+}
+
+.hamburger .bar,
+.hamburger::before,
+.hamburger::after{
+    content: '';
+    display: block;
+    height: 2px;
+    width: 20px;
+    background-color: black;
+    margin: 2px 0;
+    transition: 200ms;
+}
+
+.hamburger.is-active .bar{
+    opacity: 0;
+}
+
+.hamburger.is-active::before{
+    transform: rotate(45deg) translate(4px, 3px);
+}
+
+.hamburger.is-active::after{
+    transform: rotate(-45deg) translate(5px, -5px);
 }
 
 nav .navbar-list .flex-hide, nav .navbar-list .hide, .hide, .flex-hide{
@@ -203,9 +234,47 @@ nav .navbar-list .flex-hide, nav .navbar-list .hide, .hide, .flex-hide{
     font-size: 14px;
     line-height: 20px;
     font-weight: 400;
-
 }
 
+.mobile-navbar{
+    display: block; 
+    width: 100%; 
+    min-height: 100vh; 
+    position: fixed; 
+    top: 0; 
+    left: 0;
+    z-index: 49;
+    padding-top: 65px;
+}
+
+.mobile-navbar__list{
+    background-color: white;
+    height: 90%;
+    padding-inline: 1.5rem;
+}
+
+.mobile-navbar__list .navbar-list-item{
+    margin-bottom: .75rem;
+    padding-block: .5rem;
+}
+
+.mobile-navbar__list .flex-hide{
+    display: flex;
+}
+
+.mobile-navbar-list__link{
+    display: inline-block;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 600;
+    letter-spacing: .5px;
+}
+
+.mobile-navbar-list__link .expand-more{
+    color: black
+}
 .overlay{
     /* visibility: hidden; */
     position: fixed;
@@ -801,6 +870,9 @@ nav .navbar-list .flex-hide, nav .navbar-list .hide, .hide, .flex-hide{
 
 /* Tablet view */
 @media screen and (min-width: 650px){
+    nav{
+        padding-block: 1.5rem;
+    }
     #hero-section{
         height: 100vh;
         /* max-height: 110vh; */

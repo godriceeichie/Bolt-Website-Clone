@@ -6,107 +6,79 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        nav {
+        body{
+            height: 100vh;
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            padding: 20px;
+            justify-content: center;
+            background-color: rgba(0, 0, 0, .7);
         }
 
-        nav ul {
+        div{
+            width: 60px;
+            height: 60px;
+            background-color: rgba(0, 0, 0, .7);
+            border: 3px solid white;
             display: flex;
-            list-style: none;
+            justify-content: center;
+            align-items: center;
         }
 
-        nav li {
+        span{
+            display: block;
             position: relative;
         }
 
-        nav a {
-            color: #333;
-            text-decoration: none;
-            font-size: 18px;
-            padding: 10px 15px;
-            display: block;
+        span,
+        span::before,
+        span::after{
+            width: 1.2rem;
+            height: 3px;
+            background-color: white;
+            transition: all 200ms;
+            border-radius: 5px;
         }
 
-        .dropdown-menu {
+        span::before,
+        span::after{
             position: absolute;
-            top: 100%;
             left: 0;
-            z-index: 1;
-            min-width: 150px;
-            display: none;
         }
 
-        /* .dropdown:hover .dropdown-menu, */
-        .dropdown.open .dropdown-menu {
-            display: block;
+        span::before{
+            content: '';
+            transform: translateY(-7px);
         }
 
-        .dropdown-menu li {
-            background: #f2f2f2;
-            display: block;
+        span::after{
+            content: '';
+            transform: translateY(7px);
         }
 
-        .dropdown-menu li a {
-            color: #333;
-            font-size: 16px;
+        div.open span{
+            transform: translateX(-100%);
+            background-color: transparent;
+            /* opacity: 0; */
         }
 
+        div.open span::before{
+            transform: rotate(45deg) translateX(15px) translateY(-12px);
+        }
+
+        div.open span::after{
+            transform: rotate(-45deg) translateX(13px) translateY(15px);
+        }
     </style>
 </head>
 <body>
-    <nav>
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle">About</a>
-            <ul class="dropdown-menu">
-              <li><a href="#">Our Team</a></li>
-              <li><a href="#">Our History</a></li>
-            </ul>
-          </li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle">Services</a>
-            <ul class="dropdown-menu">
-              <li><a href="#">Consulting</a></li>
-              <li><a href="#">Training</a></li>
-              <li><a href="#">Support</a></li>
-            </ul>
-          </li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-    </nav>
+    <div>
+        <span></span>
+    </div>
     <script>
-        const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
-        // const overlay = document.querySelector('.overlay');
-
-        dropdownToggles.forEach(toggle => {
-        toggle.addEventListener('click', event => {
-            event.preventDefault();
-
-            // Close all dropdown menus
-            const dropdowns = document.querySelectorAll('.dropdown');
-            dropdowns.forEach(dropdown => {
-                dropdown.classList.remove('open');
-            });
-
-            // Toggle the clicked dropdown menu
-            const dropdown = toggle.parentElement;
-            if (dropdown.classList.contains('open')) {
-            // Close the dropdown menu if it is already open
-                dropdown.classList.remove('open');
-                // overlay.classList.remove('open');
-            } else {
-            // Open the dropdown menu if it is closed
-                dropdown.classList.toggle('open');
-                // overlay.classList.add('open');
-            }
-        });
-});
-
-
+        let div = document.querySelector("div")
+        div.addEventListener("click", () => {
+            div.classList.toggle("open")
+        })
     </script>
 </body>
 </html>

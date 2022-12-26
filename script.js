@@ -16,7 +16,6 @@ document.addEventListener("click", e => {
                     toggleBtn.classList.remove("active")
                 })
             }
-            // toggleBtn.classList.remove("active")
         })
     }
 })
@@ -24,7 +23,6 @@ document.addEventListener("click", e => {
 dropdownToggle.forEach(toggleBtn => {
     toggleBtn.addEventListener('click', e => {
         e.preventDefault()
-        // toggleBtn.classList.toggle("active")
         if(toggleBtn.classList.contains("active")){
             toggleBtn.classList.toggle("active")
         }
@@ -59,4 +57,9 @@ dropdownToggle.forEach(toggleBtn => {
             overlay.classList.remove('active');
         }
     })
+})
+
+let hamburgerToggle = document.querySelector(".hamburger");
+hamburgerToggle.addEventListener("click", () => {
+    hamburgerToggle.classList.toggle("is-active")
 })
