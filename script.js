@@ -2,6 +2,24 @@
 const dropdownToggle = document.querySelectorAll(".navbar-list-link")
 const overlay = document.querySelector('.overlay')
 const caret = document.querySelector(".expand-more")
+document.addEventListener("click", e => {
+    if(!e.target.closest(".dropdown-container")){
+        const dropdowns = document.querySelectorAll(".dropdown-container")
+        dropdowns.forEach(dropdown => {
+            dropdown.classList.remove('active')
+            if (document.querySelector('.dropdown-container.active')) {
+                overlay.classList.add('active');
+    
+            } else {
+                overlay.classList.remove('active');
+                dropdownToggle.forEach(toggleBtn => {
+                    toggleBtn.classList.remove("active")
+                })
+            }
+            // toggleBtn.classList.remove("active")
+        })
+    }
+})
 
 dropdownToggle.forEach(toggleBtn => {
     toggleBtn.addEventListener('click', e => {
