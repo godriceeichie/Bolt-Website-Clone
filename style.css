@@ -115,7 +115,8 @@ nav .hover-link>a:hover, nav .navbar-list-item>.active-link{
 
 .navbar-list-link > .expand-more{
     color: rgb(169,171,185);
-    transition: transform 400ms;
+    transform: rotate(0deg);
+    transition: transform 500ms;
 }
 
 .navbar-list-link.active > .expand-more{
@@ -162,7 +163,7 @@ nav .navbar-list .flex-hide, nav .navbar-list .hide, .hide, .flex-hide{
     opacity: 0;
     pointer-events: none;
     transform: translateY(-10px);
-    transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
+    transition: opacity 300ms ease-in-out 10ms, transform 400ms ease-in 10ms;
     /* display: none; */
     z-index: 50;
 }
