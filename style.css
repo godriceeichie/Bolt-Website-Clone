@@ -160,7 +160,7 @@ nav .navbar-list-link .logo-container>img{
     width: 20px;
     background-color: black;
     margin: 2px 0;
-    transition: 200ms;
+    transition: 300ms;
 }
 
 .hamburger.is-active .bar{
@@ -243,10 +243,13 @@ nav .navbar-list .flex-hide, nav .navbar-list .hide, .hide, .flex-hide{
     position: fixed; 
     top: 0; 
     left: 0;
-    z-index: 49;
-    padding-top: 65px;
+    z-index: 51;
+    /* padding-top: 65px; */
 }
 
+.mobile-header-container{
+    display: flex;
+}
 .mobile-navbar__list{
     background-color: white;
     height: 90%;
