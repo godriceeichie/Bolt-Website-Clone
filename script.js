@@ -59,7 +59,21 @@ dropdownToggle.forEach(toggleBtn => {
     })
 })
 
+let mobileNavbar = document.querySelector(".mobile-navbar")
+let secondHamburgerToggle = document.querySelector(".second-hamburger")
 let hamburgerToggle = document.querySelector(".hamburger");
 hamburgerToggle.addEventListener("click", () => {
+    mobileNavbar.classList.add("is-active");
     hamburgerToggle.classList.toggle("is-active")
+})
+
+secondHamburgerToggle.addEventListener("click", () => {
+    mobileNavbar.classList.remove("is-active")
+    hamburgerToggle.classList.remove("is-active")
+})
+
+let mobileDropdown = document.querySelector(".mobile-dropdown")
+let mobileNavbarToggle = document.querySelector(".mobile-navbar-list__link");
+mobileNavbarToggle.addEventListener("click", () => {
+    mobileDropdown.classList.toggle("active")
 })

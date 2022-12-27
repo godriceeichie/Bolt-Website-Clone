@@ -148,7 +148,6 @@ nav .navbar-list-link .logo-container>img{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    /* padding-inline: .75rem; */
 }
 
 .hamburger .bar,
@@ -242,23 +241,89 @@ nav .navbar-list .flex-hide, nav .navbar-list .hide, .hide, .flex-hide{
     min-height: 100vh; 
     position: fixed; 
     top: 0; 
-    left: 0;
+    right: 100%;
     z-index: 51;
-    /* padding-top: 65px; */
+    transition: 250ms;
+}
+
+.mobile-navbar.is-active{
+    right: 0;
 }
 
 .mobile-header-container{
     display: flex;
 }
+
+.second-hamburger{
+    cursor: pointer;
+    width: 42px;
+    height: 42px;
+    background-color: rgb(244,244,246);
+    border-radius: 50%;
+    appearance: none;
+    outline: none;
+    border: none;
+    margin-right: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.second-hamburger .bar,
+.second-hamburger::before,
+.second-hamburger::after{
+    content: '';
+    display: block;
+    height: 2px;
+    width: 20px;
+    background-color: black;
+    margin: 2px 0;
+    transition: 300ms;
+}
+
+.second-hamburger .bar{
+    opacity: 0;
+}
+
+.second-hamburger::before{
+    transform: rotate(45deg) translate(4px, 3px);
+}
+
+.second-hamburger::after{
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
 .mobile-navbar__list{
     background-color: white;
     height: 90%;
-    padding-inline: 1.5rem;
+    padding-inline: 2rem;
 }
 
 .mobile-navbar__list .navbar-list-item{
     margin-bottom: .75rem;
     padding-block: .5rem;
+}
+ 
+.mobile-dropdown-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.mobile-dropdown{
+    display: none;
+    padding-inline: 1rem;
+    font-weight: 100;
+    transition: 300ms;
+}
+
+.mobile-dropdown.active{
+    display: block;
+}
+
+.mobile-dropdown>li{
+    margin-top: 1.5rem;
 }
 
 .mobile-navbar__list .flex-hide{
@@ -273,11 +338,14 @@ nav .navbar-list .flex-hide, nav .navbar-list .hide, .hide, .flex-hide{
     justify-content: space-between;
     font-weight: 600;
     letter-spacing: .5px;
+    background-color: red;
+    padding: 10px 5px;
 }
 
 .mobile-navbar-list__link .expand-more{
-    color: black
+    color: black;
 }
+
 .overlay{
     /* visibility: hidden; */
     position: fixed;
