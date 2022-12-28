@@ -64,6 +64,12 @@ let hamburgerToggle = document.querySelector(".hamburger");
 hamburgerToggle.addEventListener("click", () => {
     mobileNavbar.classList.add("is-active");
     hamburgerToggle.classList.toggle("is-active")
+    if (mobileNavbar.classList.contains("is-active")) {
+        overlay.classList.add('active');
+
+    } else {
+        overlay.classList.remove('active');
+    }
 })
 
 secondHamburgerToggle.addEventListener("click", () => {

@@ -960,6 +960,15 @@ nav .navbar-list .flex-hide, nav .navbar-list .hide, .hide, .flex-hide{
     nav{
         padding-block: 1.5rem;
     }
+
+    .mobile-navbar{
+        width: 90%;
+    }
+
+    .mobile-navbar.is-active{
+        right: 10%;
+    }
+    
     #hero-section{
         height: 100vh;
         /* max-height: 110vh; */
