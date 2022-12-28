@@ -1,7 +1,6 @@
 
 const dropdownToggle = document.querySelectorAll(".navbar-list-link")
 const overlay = document.querySelector('.overlay')
-const caret = document.querySelector(".expand-more")
 document.addEventListener("click", e => {
     if(!e.target.closest(".dropdown-container")){
         const dropdowns = document.querySelectorAll(".dropdown-container")
@@ -72,8 +71,29 @@ secondHamburgerToggle.addEventListener("click", () => {
     hamburgerToggle.classList.remove("is-active")
 })
 
-let mobileDropdown = document.querySelector(".mobile-dropdown")
-let mobileNavbarToggle = document.querySelector(".mobile-navbar-list__link");
-mobileNavbarToggle.addEventListener("click", () => {
-    mobileDropdown.classList.toggle("active")
+let mobileDropdownContainer = document.querySelectorAll(".mobile-dropdown-container")
+mobileDropdownContainer.forEach(dropdownContainer => {
+    let mobileDropdown = dropdownContainer.querySelector(".mobile-dropdown")
+    let dropdownToggleBtn = dropdownContainer.querySelector(".mobile-navbar-list__link");
+    dropdownToggleBtn.addEventListener("click", () => {
+        if(mobileDropdown.classList.contains("active")){
+            mobileDropdown.classList.toggle("active")
+        }
+        else{
+            document.querySelectorAll(".mobile-dropdown").forEach(dropdown => {
+                dropdown.classList.remove("active")
+            });
+            mobileDropdown.classList.add("active")
+        }
+    })
 })
+
+// let dropdownToggleBtn = document.querySelectorAll(".mobile-navbar-list__link");
+// dropdownToggleBtn.forEach(mobileToggleBtn => {
+//     mobileToggleBtn.addEventListener("click", () => {
+//         let mobileDropdown = document.querySelector(".mobile-dropdown");
+//         if(mobileDropdownContainer.classList.contains("")){
+
+//         }
+//     })
+// })

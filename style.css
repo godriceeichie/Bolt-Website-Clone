@@ -238,14 +238,12 @@ nav .navbar-list .flex-hide, nav .navbar-list .hide, .hide, .flex-hide{
 .mobile-navbar{
     display: block; 
     width: 100%; 
-    max-width: 602px;
+    height: 100vh; 
     position: fixed; 
     top: 0; 
-    left: 0;
     right: 100%;
     z-index: 51;
-    transition: right 500ms ease;
-    padding: 12px 24px;
+    transition: 250ms ease-in;
     /* background-color: red; */
 }
 
@@ -299,13 +297,24 @@ nav .navbar-list .flex-hide, nav .navbar-list .hide, .hide, .flex-hide{
 }
 
 .mobile-navbar__list{
-    background-color: white;
+    /* background-color: red; */
+    padding-inline: 2rem;
+    display: flex;
+    flex-direction: column;
+    height: 90%;
+}
+
+.mobile-navbar__list .navbar-list-item{
+    padding-block: .1rem .5rem;
+}
+
+.mobile-navbar__list .flex-hide{
+    display: flex;
 }
  
 .mobile-dropdown-container{
     display: flex;
     flex-direction: column;
-    /* background-color: red; */
 }
 
 .mobile-dropdown{
@@ -313,7 +322,6 @@ nav .navbar-list .flex-hide, nav .navbar-list .hide, .hide, .flex-hide{
     padding-inline: 1rem;
     font-weight: 100;
     transition: display 300ms ease-in-out;
-    /* padding-top: 10px; */
 }
 
 .mobile-dropdown.active{
@@ -321,11 +329,7 @@ nav .navbar-list .flex-hide, nav .navbar-list .hide, .hide, .flex-hide{
 }
 
 .mobile-dropdown>li{
-    margin-bottom: 1.5rem;
-}
-
-.mobile-navbar__list .flex-hide{
-    display: flex;
+    margin-top: 1.5rem;
 }
 
 .mobile-navbar-list__link{
@@ -337,27 +341,27 @@ nav .navbar-list .flex-hide, nav .navbar-list .hide, .hide, .flex-hide{
     font-weight: 600;
     letter-spacing: .5px;
     padding: 10px 5px;
-    /* background-color: blue; */
 }
 
 .mobile-navbar-list__link .expand-more{
     color: black;
+    transform: rotate(0deg);
+    transition: transform 500ms;
+}
+
+.mobile-navbar-list__link .expand-more.active{
+    transform: rotate(180deg);
 }
 
 .mobile-navbar-footer{
-    padding-inline: 2rem;
-}
-
-.mobile-navbar-footer .user-language{
-    margin-bottom: 1rem;
-}
-
-.mobile-navbar-footer .copyright-text>span{
-    color: #747a82;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: .85rem;
 }
 
 .overlay{
-    /* visibility: hidden; */
     position: fixed;
     top: 0;
     left: 0;
@@ -875,7 +879,6 @@ nav .navbar-list .flex-hide, nav .navbar-list .hide, .hide, .flex-hide{
 }
 /* for iPhone SE */
 @media screen and (min-width: 360px) and (max-height: 844px){
-
     #hero-section{
         height: 95vh;
     }
