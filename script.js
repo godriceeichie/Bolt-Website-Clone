@@ -76,6 +76,19 @@ mobileDropdownContainer.forEach(dropdownContainer => {
     let mobileDropdown = dropdownContainer.querySelector(".mobile-dropdown")
     let dropdownToggleBtn = dropdownContainer.querySelector(".mobile-navbar-list__link");
     dropdownToggleBtn.addEventListener("click", () => {
+        let caret = dropdownContainer.querySelector(".mobile-navbar-list__link .expand-more")
+        if(caret.classList.contains("active")){
+            caret.classList.toggle("active")
+        }
+
+        else{
+            let caretList = document.querySelectorAll(".mobile-navbar-list__link .expand-more");
+            caretList.forEach(eachCaret => {
+                eachCaret.classList.remove("active")
+            })
+            caret.classList.add("active")
+        }
+
         if(mobileDropdown.classList.contains("active")){
             mobileDropdown.classList.toggle("active")
         }
@@ -87,13 +100,3 @@ mobileDropdownContainer.forEach(dropdownContainer => {
         }
     })
 })
-
-// let dropdownToggleBtn = document.querySelectorAll(".mobile-navbar-list__link");
-// dropdownToggleBtn.forEach(mobileToggleBtn => {
-//     mobileToggleBtn.addEventListener("click", () => {
-//         let mobileDropdown = document.querySelector(".mobile-dropdown");
-//         if(mobileDropdownContainer.classList.contains("")){
-
-//         }
-//     })
-// })
